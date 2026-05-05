@@ -34,7 +34,7 @@ function NavLink({ children }: { children: ReactNode }) {
   return (
     <button
       type="button"
-      className="font-body text-white font-bold uppercase tracking-[0.02em] text-sm hover:text-[#ff975d] transition-colors"
+      className="font-body text-white font-bold uppercase tracking-[0.02em] text-[16px] hover:text-[#ff975d] transition-colors"
     >
       {children}
     </button>
@@ -68,7 +68,7 @@ function BtnSecondary({
   return (
     <button
       type="button"
-      className={`rounded-3xl border-2 border-[#ff975d] bg-[rgba(23,25,31,0.5)] backdrop-blur-sm px-8 py-5 font-body text-white text-base md:text-xl font-bold uppercase tracking-[0.02em] shadow-[0_4px_44px_rgba(255,92,0,0.2)] hover:bg-[rgba(35,35,48,0.65)] transition-colors ${className ?? ''}`}
+      className={`rounded-3xl border-2 border-[#ff975d] bg-[rgba(23,25,31,0.5)] backdrop-blur-sm min-w-[267px] h-[72px] font-body text-white text-base md:text-xl font-bold uppercase tracking-[0.02em] shadow-[0_4px_44px_rgba(255,92,0,0.2)] hover:bg-[rgba(35,35,48,0.65)] transition-colors ${className ?? ''}`}
     >
       {children}
     </button>
@@ -79,7 +79,7 @@ function BtnOutlineSmall({ children }: { children: ReactNode }) {
   return (
     <button
       type="button"
-      className="rounded-3xl border-2 border-[#ff975d] backdrop-blur-sm px-6 py-3 font-body text-white text-xs md:text-base font-bold uppercase tracking-[0.02em] shadow-[0_4px_44px_rgba(255,92,0,0.2)]"
+      className="rounded-[24px] border-2 border-[#ff975d] backdrop-blur-sm min-w-[222px] min-h-[67px] font-body text-white text-xs md:text-base font-bold uppercase tracking-[0.02em] shadow-[0_4px_44px_rgba(255,92,0,0.2)]"
     >
       {children}
     </button>
@@ -89,10 +89,10 @@ function BtnOutlineSmall({ children }: { children: ReactNode }) {
 function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/5 bg-[#232330]/95 backdrop-blur-xl">
-      <div className="relative mx-auto flex min-h-[72px] max-w-[1920px] items-center px-4 py-4 md:min-h-[136px] md:px-10 lg:px-20">
-        <div className="relative z-10 flex min-w-0 flex-1 flex-wrap items-center gap-3 md:gap-6 lg:gap-8">
+      <div className="relative mx-auto flex min-h-[72px] max-w-[1920px] items-center px-4 md:min-h-[136px] md:px-10 lg:px-20">
+        <div className="relative z-10 flex min-w-0 flex-1 flex-wrap items-center gap-3 md:gap-6 lg:gap-[48px]">
           <BtnOutlineSmall>select your game</BtnOutlineSmall>
-          <div className="hidden items-center gap-6 lg:flex">
+          <div className="hidden items-center gap-[48px] lg:flex">
             <NavLink>about us</NavLink>
             <NavLink>how it works</NavLink>
           </div>
@@ -113,23 +113,37 @@ function Header() {
           />
         </a>
 
-        <div className="relative z-10 flex min-w-0 flex-1 flex-wrap items-center justify-end gap-3 md:gap-6 lg:gap-8">
+        <div className="relative z-10 flex min-w-0 flex-1 flex-wrap items-center justify-end gap-3 md:gap-6 lg:gap-[48px]">
           <div className="hidden items-center gap-6 xl:flex">
             <NavLink>blog</NavLink>
             <NavLink>Contact Us</NavLink>
           </div>
-          <div className="flex items-center gap-2 rounded-2xl border border-[#383852] px-3 py-2 text-white">
-            <span className="text-lg font-normal" aria-hidden>
+          <div className="flex items-center gap-2 px-[16px] py-[12px] rounded-2xl border border-[#383852] min-w-[115px] justify-center h-[53px] text-white">
+            <span className="text-[24px] font-normal" aria-hidden>
               $
             </span>
-            <span className="font-body text-lg">USD</span>
-            <span className="text-xs opacity-80" aria-hidden>
-              ▾
-            </span>
+            <span className="font-body text-[24px]">USD</span>
+            <svg
+              width={18}
+              height={18}
+              viewBox="0 0 18 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className=""
+              aria-hidden="true"
+            >
+              <path
+                d="M4.5 7.5L9 12L13.5 7.5"
+                stroke="white"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
           </div>
           <button
             type="button"
-            className="relative flex h-[53px] items-center gap-2 rounded-2xl border border-[#383852] px-3 text-white"
+            className="relative flex h-[53px] items-center justify-center gap-2 rounded-2xl border border-[#383852] w-[56px] text-white"
             aria-label="Cart, 2 items"
           >
             <svg width={24} height={24} viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -138,13 +152,13 @@ function Header() {
                 fill="white"
               />
             </svg>
-            <span className="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-xl border-2 border-[#252430] bg-[#ff5c00] px-1 text-[10px] font-bold uppercase">
+            <span className="absolute right-2 top-1 flex min-h-[16px] min-w-[16px] items-center justify-center rounded-xl border-2 border-[#252430] bg-[#ff5c00] px-1 text-[10px] font-bold uppercase">
               2
             </span>
           </button>
           <button
             type="button"
-            className="rounded-3xl border-2 border-[#ff975d] bg-gradient-to-r from-[#ff5c00] to-[#a32d05] px-6 py-3 font-body text-white text-sm font-bold uppercase shadow-[0_4px_64px_rgba(255,92,0,0.4)]"
+            className="rounded-[24px] border-2 border-[#ff975d] bg-gradient-to-r from-[#ff5c00] to-[#a32d05] min-w-[111px] h-[72px] font-body text-white text-sm font-bold uppercase shadow-[0_4px_64px_rgba(255,92,0,0.4)]"
           >
             login
           </button>
@@ -179,11 +193,10 @@ const reviewBody =
 function ReviewCard({ emphasized }: { emphasized?: boolean }) {
   return (
     <article
-      className={`flex w-[min(100%,430px)] shrink-0 flex-col gap-4 rounded-3xl border p-8 backdrop-blur-xl ${
-        emphasized
-          ? 'border-[#ff975d] bg-gradient-to-br from-[rgba(56,56,82,0.5)] via-[rgba(43,45,77,0.5)] to-[rgba(13,15,21,0.5)]'
-          : 'border-[#6d6d96] bg-gradient-to-br from-[rgba(56,56,82,0.5)] via-[rgba(43,45,77,0.5)] to-[rgba(13,15,21,0.5)]'
-      }`}
+      className={`flex z-20 max-h-[355px] w-[430px] shrink-0 flex-col gap-3 rounded-3xl border p-8 backdrop-blur-xl ${emphasized
+        ? 'border-[#ff975d] bg-gradient-to-br from-[rgba(56,56,82,0.5)] via-[rgba(43,45,77,0.5)] to-[rgba(13,15,21,0.5)]'
+        : 'border-[#6d6d96] bg-gradient-to-br from-[rgba(56,56,82,0.5)] via-[rgba(43,45,77,0.5)] to-[rgba(13,15,21,0.5)]'
+        }`}
     >
       <div className="flex items-center gap-2">
         <img
@@ -204,7 +217,7 @@ function ReviewCard({ emphasized }: { emphasized?: boolean }) {
           2020-12-08
         </time>
       </div>
-      <p className="font-body text-base leading-6 text-white">{reviewBody}</p>
+      <p className="line-clamp-5 font-medium text-[16px] min-h-[120px] text-white">{reviewBody}</p>
       <p className="font-body text-sm text-[#aaa]">
         <span className="text-[#aaa]">Purchased:</span>{' '}
         <span className="text-white">Game</span>
@@ -236,63 +249,65 @@ const steps = [
   },
 ] as const
 
-function IconCart() {
-  return (
-    <svg className="shrink-0" width={50} height={50} viewBox="0 0 50 50" fill="none" aria-hidden>
-      <path
-        d="M47.0906 30.8757V12.9342L11.7462 6.55255V4.34687C11.7462 1.95003 9.79632 0 7.39948 0H2.91016V2.94536H7.39938C8.17215 2.94536 8.80088 3.5741 8.80088 4.34687V31.5429C8.80088 34.6825 11.3551 37.2368 14.4948 37.2368H15.6734V40.5932C15.0717 40.3295 14.4078 40.1821 13.7098 40.1821C11.003 40.1821 8.80088 42.3843 8.80088 45.0911C8.80088 47.7978 11.003 50 13.7098 50C16.251 50 18.3471 48.0591 18.5941 45.5819H18.6188V37.2368H44.1452V40.5932C43.5435 40.3295 42.8796 40.1821 42.1817 40.1821C39.4749 40.1821 37.2727 42.3843 37.2727 45.0911C37.2727 47.7978 39.4749 50 42.1817 50C44.7228 50 46.8189 48.0591 47.066 45.5819H47.0906V34.2914H14.4948C12.9792 34.2914 11.7462 33.0585 11.7462 31.5429V30.3848L47.0906 30.8757Z"
-        fill="#FF975D"
-      />
-    </svg>
-  )
-}
+const stepIcons = ['/icon/Group (1).png', '/icon/Group (2).png', '/icon/Group.png'] as const
+const faqCategoryIcons = [
+  '/question/icons (1).png',
+  '/question/icons.png',
+  '/question/icons (2).png',
+  '/question/icons (3).png',
+  '/question/icons (4).png',
+  '/question/icons (5).png',
+  '/question/icons (6).png',
+] as const
 
-function IconShield() {
-  return (
-    <svg className="shrink-0" width={50} height={50} viewBox="0 0 50 50" fill="none" aria-hidden>
-      <path
-        d="M15.1965 15.7034C15.1965 14.2084 13.9804 12.9922 12.4854 12.9922H8.59399C7.09899 12.9922 5.88281 14.2084 5.88281 15.7034V19.1045C5.88281 20.5995 7.09899 21.8157 8.59399 21.8157H12.4854C13.9804 21.8157 15.1965 20.5995 15.1965 19.1045V15.7034ZM12.2554 18.8745H8.82399V15.9334H12.2554V18.8745Z"
-        fill="#FF975D"
-      />
-      <path d="M5.88281 24.7559H11.7652V27.697H5.88281V24.7559Z" fill="#FF975D" />
-      <path d="M14.7031 24.7559H20.5855V27.697H14.7031V24.7559Z" fill="#FF975D" />
-      <path
-        d="M47.0588 24.7562V23.1455C47.0588 19.4976 44.5555 16.4235 41.1765 15.5505V8.09816C41.1765 5.93111 39.4134 4.16797 37.2463 4.16797H3.9302C1.76304 4.16797 0 5.93101 0 8.09816V29.6495C0 31.8167 1.76304 33.5797 3.9302 33.5797H28.4314V35.0503C28.4314 40.9968 33.2692 45.8346 39.2157 45.8346C45.1621 45.8346 50 40.9968 50 35.0503V24.7562H47.0588Z"
-        fill="#FF975D"
-      />
-      <path
-        d="M38.1816 38.5468L44.1207 33.2017L42.153 31.0156L38.2881 34.494L36.3335 32.5394L34.2539 34.619L38.1816 38.5468Z"
-        fill="#FF975D"
-      />
-    </svg>
-  )
-}
+const faqCategories: Array<{
+  label: string
+  count: number
+  iconPath: string
+  active?: boolean
+}> = [
+  { label: 'General', count: 25, active: true, iconPath: faqCategoryIcons[0] },
+  { label: 'Account Safety', count: 12, iconPath: faqCategoryIcons[1] },
+  { label: 'Boosting', count: 10, iconPath: faqCategoryIcons[2] },
+  { label: 'Order Process', count: 10, iconPath: faqCategoryIcons[3] },
+  { label: 'Payments', count: 3, iconPath: faqCategoryIcons[4] },
+  { label: 'Games & Services', count: 3, iconPath: faqCategoryIcons[5] },
+  { label: 'Discounts & Loyalty', count: 3, iconPath: faqCategoryIcons[6] },
+]
 
-function IconSteps() {
-  return (
-    <svg className="shrink-0" width={50} height={50} viewBox="0 0 50 50" fill="none" aria-hidden>
-      <path
-        d="M44.6076 25.7344C41.9693 25.7344 39.769 27.6396 39.3065 30.1461H30.3011C29.8385 27.6396 27.6382 25.7344 24.9999 25.7344C22.3616 25.7344 20.1613 27.6396 19.6987 30.1461H10.6933C10.2308 27.6396 8.03049 25.7344 5.39216 25.7344C2.41892 25.7344 0 28.1533 0 31.1265C0 34.0998 2.41892 36.5187 5.39216 36.5187C7.67372 36.5187 9.62745 35.0936 10.4136 33.0873H19.9785C20.7647 35.0936 22.7184 36.5187 25 36.5187C27.2816 36.5187 29.2353 35.0936 30.0215 33.0873H39.5864C40.3725 35.0936 42.3263 36.5187 44.6078 36.5187C47.5811 36.5187 50 34.0998 50 31.1265C50 28.1533 47.5809 25.7344 44.6076 25.7344Z"
-        fill="#FF975D"
-      />
-      <path
-        d="M10.2923 19.8526H7.3511V8.08789H1.46875V11.0291H4.40993V19.8526H1.46875V22.7938H10.2923V19.8526Z"
-        fill="#FF975D"
-      />
-      <path
-        d="M29.4134 19.8526H23.531V18.2462L29.4134 14.8149V8.08789H20.5898V11.0291H26.4722V13.1256L20.5898 16.557V22.7938H29.4134V19.8526Z"
-        fill="#FF975D"
-      />
-      <path d="M20.5859 38.9707H29.4095V41.9119H20.5859V38.9707Z" fill="#FF975D" />
-      <path
-        d="M48.5267 8.08789H39.7031V11.0291H45.5855V13.9702H41.1737V16.9114H45.5855V19.8526H39.7031V22.7938H48.5267V8.08789Z"
-        fill="#FF975D"
-      />
-    </svg>
-  )
-}
+const faqItems: Array<{
+  question: string
+  answer?: string
+  open?: boolean
+}> = [
+  {
+    question: 'How does boosting work?',
+    answer:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed felis vel eros eleifend fermentum. Nulla id iaculis dui. Morbi maximus placerat augue, in euismod felis facilisis sit amet. Quisque efficitur egestas magna nec posuere. Mauris auctor, nisi nec luctus pharetra, dui sem eleifend justo, eget euismod augue enim non ante.',
+    open: true,
+  },
+  { question: 'Can I play with my booster?' },
+  { question: 'How much do I have to wait for my order to start after buying?' },
+  { question: 'How do you ensure the safety of my account?' },
+  { question: 'How can I track my order?' },
+  { question: 'Can I choose a specific booster and the roles or heroes which I want him to play?' },
+]
 
-const stepIcons = [IconCart, IconShield, IconSteps] as const
+const paymentCardIcons = [
+  'Page 1 (1).png',
+  'master_card.png',
+  'Page 1.png',
+  'Слой 2.png',
+  'Слой 2 (2).png',
+  'Слой 2 (1).png',
+] as const
+
+const socialIcons = [
+  'facebook.png',
+  'x (1).png',
+  'x.png',
+  'Слой 2 (3).png',
+] as const
 
 function FooterColumn({
   title,
@@ -319,107 +334,207 @@ function FooterColumn({
 
 export function LandingPage() {
   const [slide, setSlide] = useState(0)
+  const whyChooseItems: Array<{
+    title: string
+    description: string
+    iconPath?: string
+  }> = [
+    {
+      title: '24/7 Live Support',
+      description: 'Real humans, real help-anytime you need it.',
+      iconPath: '/icon/streamline-plump_call-center-support-service-solid.png',
+    },
+    {
+      title: 'Order Protection Guarantee',
+      description: 'You only pay when the job is done-period.',
+      iconPath: '/icon/icon-park-solid_file-protection.png',
+    },
+    {
+      title: '20+ Years of Experience',
+      description: 'Proven expertise you can trust.',
+      iconPath: '/icon/mingcute_check-2-fill.png',
+    },
+    {
+      title: 'Secure Boosting',
+      description: '100% safe methods-no bots, no shortcuts.',
+      iconPath: '/icon/Vector.png',
+    },
+    {
+      title: 'USA-Based Operations',
+      description: 'Reliable service backed by a trusted location.',
+      iconPath: '/icon/fa6-solid_flag-usa.png',
+    },
+    {
+      title: 'Loyalty Rewards',
+      description: 'Get rewarded for staying with us.',
+      iconPath: '/icon/streamline-ultimate_reward-stars-4-bold.png',
+    },
+  ]
 
   return (
-    <div className="min-h-screen bg-[#17191f] text-white">
+    <div className="min-h-screen flex flex-col bg-[#17191f] text-white">
       <Header />
 
-      <section className="relative isolate overflow-hidden">
+      <section className="relative isolate overflow-hidden min-h-[1288px]">
         <img
           src={img.heroBg}
           alt=""
           className="absolute inset-0 size-full max-h-[900px] object-cover md:max-h-none"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-[#17191f]/50 to-[#17191f]" />
-        <div className="relative mx-auto flex max-w-[1100px] flex-col items-center gap-10 px-4 pb-28 pt-16 text-center md:pb-36 md:pt-24">
-          <div className="flex max-w-4xl flex-col items-center gap-3">
-            <h1 className="font-display text-3xl font-black leading-tight tracking-tight text-[#ff975d] md:text-5xl">
-              OGEdge your competitive edge, delivered
+        <div className="relative mx-auto flex max-w-[1100px] flex-col items-center gap-3 px-4 pb-28 pt-16 text-center md:pb-[190px] md:pt-[190px]">
+          <div className="flex max-w-5xl flex-col items-center gap-3">
+            <h1 className="font-display text-[48px] font-black leading-tight tracking-tight text-white">
+              OGEdge your competitive edge,&nbsp;
+              <span className="font-display text-[48px] font-black leading-tight tracking-tight text-[#FFA282]">delivered</span>
             </h1>
-            <p className="max-w-2xl font-body text-lg text-white md:text-2xl">
+            <p className="max-w-2xl font-body text-[24px] text-white md:text-2xl">
               Two decades of dominance. Providing elite coaching, boosting, and leveling since 2006
             </p>
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-3 text-[#ff975d]">
+          <div className="flex flex-wrap mb-[32px] items-center justify-center gap-3 text-[#ff975d]">
             <StarRating className="drop-shadow-[0_0_10px_rgba(255,92,0,0.4)]" />
-            <span className="font-body text-lg font-bold">4.9 Star Rating</span>
-            <span className="font-body text-lg font-medium text-white">10k Reviews</span>
+            <span className="font-body text-[20px] font-bold">4.9 Star Rating</span>
+            <span className="font-body text-[20px] font-medium text-white">10k Reviews</span>
           </div>
           <BtnPrimary>get started now</BtnPrimary>
         </div>
 
-        <div className="relative z-10 mx-auto -mt-16 max-w-[1280px] px-4 pb-16 md:-mt-24">
-          <div className="rounded-3xl border border-[#17191f] bg-[rgba(23,25,31,0.5)] p-6 backdrop-blur-xl md:p-10">
-            <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
-              {gameTiles.map((t) => (
-                <GameCard key={t.alt} tile={t} />
-              ))}
+        <div className="rounded-3xl absolute bottom-0 border w-full flex flex-col items-center border-[#17191f] min-h-[616px] bg-[rgba(23,25,31,0.5)] p-6 backdrop-blur-xl md:p-[64px]">
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6 w-[1280px] h-[384px]">
+            {gameTiles.map((t) => (
+              <GameCard key={t.alt} tile={t} />
+            ))}
+          </div>
+          <div className="mt-8 flex justify-center">
+            <BtnSecondary>show all 19 games</BtnSecondary>
+          </div>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden bg-[#17191f] px-4 py-12 md:px-0 md:py-[120px]">
+        <div className="mx-auto flex w-full max-w-[1920px] justify-center">
+          <div className="relative flex w-full max-w-[1445px] flex-col items-center gap-10 md:min-h-[601px] lg:flex-row lg:items-start lg:justify-center">
+            <div className="relative z-10 w-full max-w-[880px] lg:-mr-[110px]">
+              <div className="flex flex-col gap-[80px]">
+                <h2 className="font-display text-[48px] font-light leading-[45px] text-[#ff5c00] md:text-[36px]">
+                  Why&nbsp;
+                  <span className='text-white'>Customers Choose</span>
+                  &nbsp;OGEdge
+                </h2>
+                <div className="grid gap-6 md:grid-cols-2 md:gap-x-20 md:gap-y-6 max-h-[474px] min-w-[880px]">
+                  {whyChooseItems.map(({ title, description, iconPath }) => (
+                    <article key={title} className="flex flex-col gap-4">
+                      <div className="flex size-16 items-center justify-center rounded-[124px] bg-[rgba(255,92,0,0.2)]">
+                        {iconPath ? (
+                          <img
+                            src={iconPath}
+                            alt=""
+                            className="size-8 object-contain"
+                            loading="lazy"
+                          />
+                        ) : (
+                          <span className="font-body text-[28px] leading-none text-[#ff5c00]">★</span>
+                        )}
+                      </div>
+                      <div className="flex flex-col gap-[2px]">
+                        <h3 className="font-body text-[24px] font-bold leading-8 text-[#ff5c00]">{title}</h3>
+                        <p className="font-body text-[18px] leading-7 text-white">{description}</p>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </div>
             </div>
-            <div className="mt-8 flex justify-center">
-              <BtnSecondary>show all 19 games</BtnSecondary>
+
+            <div className="relative z-10 w-full max-w-[902px] lg:mt-[-22px]">
+              <div className="pointer-events-none absolute left-[75%] top-[20%] hidden h-[350px] w-[210px] -translate-x-1/2 rounded-[128px] bg-[#ff5c00] blur-[107px] md:block" />
+              <div className="pointer-events-none absolute left-[64%] top-[30%] hidden h-[216px] w-[250px] -translate-x-1/2 rounded-[128px] bg-[#ff5c00] blur-[107px] md:block" />
+              <img
+                src="/Adobe Express - file 1.png"
+                alt="OGEdge specialists"
+                className="relative z-[1] mx-auto h-auto w-full min-w-[790px] min-h-[621px] max-h-[621px] max-w-[790px] object-contain"
+              />
+              <div className="pointer-events-none absolute bottom-[-6px] left-1/2 z-[2] hidden h-[172px] w-full max-w-[902px] -translate-x-1/2 bg-gradient-to-t from-[#17191f] to-[#17191f]/20 blur-[35px] md:block" />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="w-full">
-        <img src={img.whyChoose} alt="Why choose OGEdge" className="block w-full object-cover" />
-      </section>
-
-      <section className="relative overflow-hidden bg-[#17191f] py-16 md:py-24">
-        <div className="pointer-events-none absolute left-10 top-20 size-72 rounded-full bg-[#ff5c00]/20 blur-[100px]" />
-        <div className="relative mx-auto flex max-w-[1280px] flex-col gap-12 px-4 lg:flex-row lg:items-start lg:justify-between">
-          <div className="relative mx-auto max-w-[380px] lg:mx-0">
-            <div className="absolute left-1/2 top-1/2 size-48 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#ff5c00]/40 blur-[80px]" />
-            <img
-              src={img.reviewCharacter}
-              alt=""
-              className="relative z-[1] w-full max-w-[380px]"
-            />
-          </div>
-          <div className="flex flex-1 flex-col gap-8 lg:max-w-[760px]">
-            <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
-              <h2 className="font-display text-2xl font-bold text-white md:text-4xl">
-                What our players are saying
-              </h2>
-              <div className="flex flex-wrap items-center gap-3">
-                <div className="flex items-center gap-2 rounded-3xl border-2 border-[#ff975d] bg-[rgba(23,25,31,0.5)] px-4 py-3 shadow-[0_4px_44px_rgba(255,92,0,0.2)] backdrop-blur-sm">
-                  <FiveStars />
-                  <span className="font-body text-base font-bold text-[#ff975d] drop-shadow-[0_0_10px_rgba(255,92,0,0.4)]">
+      <section className="relative overflow-hidden bg-[#17191f] py-12 md:min-h-[900px] md:py-0">
+        <div className="pointer-events-none absolute left-[344px] top-[230px] hidden size-[317px] rounded-full bg-[#ff5c00] blur-[107px] md:block" />
+        <div className="relative mx-auto flex h-full max-w-[1920px] flex-col px-4 py-10 md:px-0 md:py-0">
+          <div className="flex flex-col gap-8 md:absolute md:left-[754px] md:top-[217px] md:w-[846px]">
+            <h2 className="font-display text-3xl font-bold leading-[45px] text-white md:text-[36px]">
+              What our players are saying
+            </h2>
+            <div className="flex w-fit items-center gap-2 rounded-3xl bg-[rgba(23,25,31,0.5)] border-2 border-[#ffa384] min-w-[438px] h-[72px] shadow-[0_4px_44px_rgba(255,92,0,0.2)] backdrop-blur-[3px] md:h-[72px] md:w-[438px] md:px-8 md:py-6">
+              <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1">
+                  <StarRating className="drop-shadow-[0_0_10px_rgba(255,92,0,0.4)]" />
+                  <span className="font-body text-lg font-bold leading-[30px] text-[#ff975d] drop-shadow-[0_0_10px_rgba(255,92,0,0.4)] md:text-[20px]">
                     4.9 Star Rating
                   </span>
-                  <span className="font-body text-sm font-medium text-white">10k Reviews</span>
-                  <span className="text-white/60">|</span>
-                  <span className="font-body text-base font-bold uppercase tracking-wide">see all</span>
-                  <span aria-hidden className="text-white">
-                    →
-                  </span>
                 </div>
+                <span className="font-body text-sm font-medium leading-6 text-white md:text-[16px]">10k Reviews</span>
+                <span className="font-body text-sm font-medium text-white md:text-[16px]">|</span>
               </div>
+              <span className="font-body text-base font-bold uppercase tracking-[0.02em] text-white md:text-[20px]">
+                see all
+              </span>
+              <span aria-hidden className="text-white">→</span>
             </div>
-            <div className="flex items-stretch gap-4 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          </div>
+
+          <div className="relative mx-auto mt-6 w-full max-w-[1562px] md:absolute md:left-[155px] md:top-[466px] md:mt-0">
+            <button
+              type="button"
+              className="absolute left-0 top-1/2 z-20 hidden size-16 -translate-y-1/2 items-center justify-center rounded-[56px] shadow-[0_4px_16px_rgba(250,70,9,0.32)] backdrop-blur-[3px] md:flex"
+              aria-label="Previous reviews"
+            >
+              <span className="text-[42px] leading-none text-[#ff5c00]">‹</span>
+            </button>
+
+            <div className="flex ml-[120px] items-stretch z-[50] gap-4 overflow-x-auto pb-2 md:w-[1562px] h-[355px] [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
               <ReviewCard />
               <ReviewCard emphasized />
               <ReviewCard />
             </div>
+
+            <button
+              type="button"
+              className="absolute right-0 top-1/2 z-20 hidden size-16 -translate-y-1/2 items-center justify-center rounded-[56px] border border-[#ffa384] bg-white/10 shadow-[0_4px_16px_rgba(250,70,9,0.32)] backdrop-blur-[3px] md:flex"
+              aria-label="Next reviews"
+            >
+              <span className="text-[42px] leading-none text-[#ff5c00]">›</span>
+            </button>
+          </div>
+
+          <div className="pointer-events-none mx-auto mt-10 max-w-[420px] md:absolute md:left-[201px] md:top-[79px] md:mt-0 md:w-[526px]">
+            <img src="/character.png" alt="" className="relative z-[1] w-full" />
           </div>
         </div>
       </section>
 
-      <section className="relative min-h-[560px] overflow-hidden md:min-h-[700px]">
+      <section className="relative flex min-h-[560px] justify-center items-center overflow-hidden md:min-h-[700px] max-h-[700px]">
         <img src={img.stepsBg} alt="" className="absolute inset-0 size-full object-cover" />
-        <div className="absolute inset-0 bg-[#17191f]/70" />
-        <div className="relative mx-auto flex max-w-[1280px] flex-col gap-12 px-4 py-16 md:flex-row md:items-center md:py-24">
-          <div className="flex flex-1 flex-col gap-10">
+        <div className="absolute inset-0 bg-[#17191f]/30" />
+        <div className="relative flex min-w-[1280px] max-w-[1280px] h-[504px] flex-col gap-12 px-4 py-16 md:flex-row md:items-center justify-between md:py-24">
+          <div className="flex w-[716px] h-[504px] flex-col gap-10">
             <h2 className="font-display text-2xl font-bold md:text-4xl">
               Get your service now in 3 simple steps!
             </h2>
             <div className="flex flex-col gap-8">
               {steps.map((s, i) => {
-                const Icon = stepIcons[i]
+                const iconPath = stepIcons[i]
                 return (
                   <div key={s.title} className="flex gap-8 md:gap-10">
-                    <Icon />
+                    <img
+                      src={iconPath}
+                      alt=""
+                      className="h-[50px] w-[50px] shrink-0 object-contain"
+                      loading="lazy"
+                    />
                     <div>
                       <h3 className="font-body text-lg font-bold text-[#ff975d]">{s.title}</h3>
                       <p className="mt-1 font-body text-lg leading-7 text-white">{s.body}</p>
@@ -429,28 +544,19 @@ export function LandingPage() {
               })}
             </div>
           </div>
-          <div className="flex flex-1 flex-col items-center gap-6 md:items-end">
+          <div className="flex flex-col items-center max-w-[300px] h-[150px] gap-6">
             <button
               type="button"
-              className="flex items-center gap-6 rounded-full border border-white/10 bg-black/20 p-4 backdrop-blur-sm transition hover:bg-black/30"
+              className="flex items-center gap-[30px]"
               aria-label="Watch the video"
             >
-              <svg width={120} height={120} viewBox="0 0 150 150" fill="none" aria-hidden>
-                <path
-                  d="M150 75C150 33.6439 116.356 0 75 0C33.6439 0 0 33.6439 0 75C0 116.356 33.6439 150 75 150C116.356 150 150 116.356 150 75Z"
-                  fill="white"
-                  fillOpacity={0.15}
-                />
-                <path
-                  d="M59.1099 112.268H59.4205L58.6958 110.042C56.7647 109.935 54.948 109.092 53.6194 107.686C52.2908 106.28 51.5513 104.419 51.553 102.485V47.4642C51.553 44.8714 52.5855 42.3864 54.4189 40.5529C56.2524 38.7195 58.7374 37.6871 61.3303 37.6816C63.0432 37.687 64.7234 38.1517 66.1957 39.0274L108.277 63.3028L106.828 65.0108L64.0271 39.0274C62.5548 38.1517 60.8746 37.687 59.1617 37.6816C57.1967 39.9211 55.31 40.6795 53.8821 42.0295C53.141 42.7265 52.5516 43.5689 52.1509 44.504C51.7501 45.4391 51.5465 46.4469 51.553 47.4642V102.485C51.5513 104.419 52.2908 106.28 53.6194 107.686C54.948 109.092 56.7647 109.935 58.6958 110.042L59.1099 112.268Z"
-                  fill="#BF3126"
-                />
-                <path
-                  d="M110.509 81.5738L66.875 106.781L67.5996 108.903L111.647 83.4889C114.893 80.4338 116.44 76.2528 116.44 76.2528L113.562 68.0645L112.165 69.7725C113.591 71.5869 114.321 73.7769 114.267 76.0844C114.106 77.2273 113.683 78.3176 113.031 79.2699C112.38 80.2222 111.516 81.0108 110.509 81.5738Z"
-                  fill="#FA4609"
-                />
-              </svg>
-              <span className="max-w-[10rem] text-left font-body text-xl font-semibold leading-snug">
+              <img
+                src="/icon/play-icon.png"
+                alt=""
+                className="h-[150px] w-[150px] rounded-full object-contain"
+                loading="lazy"
+              />
+              <span className="max-w-[10rem] text-left font-semibold text-[24px] font-semibold leading-snug">
                 WATCH THE VIDEO
               </span>
             </button>
@@ -460,11 +566,11 @@ export function LandingPage() {
 
       <section className="relative bg-[#17191f] py-16 md:py-28">
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="absolute left-[10%] top-[20%] size-64 rounded-full bg-[#ff5c00]/20 blur-[100px]" />
+          <div className="absolute left-[10%] top-[40%] size-64 rounded-full bg-[#ff5c00]/20 blur-[100px]" />
           <div className="absolute right-[15%] top-[40%] size-64 rounded-full bg-[#ff5c00]/20 blur-[100px]" />
         </div>
         <div className="relative mx-auto flex max-w-[1220px] flex-col gap-10 px-4 lg:flex-row lg:items-center lg:justify-between">
-          <div className="max-w-xl">
+          <div className="w-[400px] h-[373px]">
             <p className="font-display text-4xl font-bold text-[#ff975d]">01</p>
             <h2 className="mt-2 font-display text-2xl font-bold leading-snug md:text-4xl">
               <span className="text-white">We provide </span>
@@ -486,9 +592,8 @@ export function LandingPage() {
                   key={i}
                   type="button"
                   onClick={() => setSlide(i)}
-                  className={`h-0.5 rounded-full transition-all ${
-                    slide === i ? 'w-20 bg-[#ff975d]' : 'w-5 bg-[#383852]'
-                  }`}
+                  className={`h-0.5 rounded-full transition-all ${slide === i ? 'w-20 bg-[#ff975d]' : 'w-5 bg-[#383852]'
+                    }`}
                   aria-label={`Slide ${i + 1}`}
                 />
               ))}
@@ -499,7 +604,7 @@ export function LandingPage() {
               <img
                 src={img.highlightLeft}
                 alt=""
-                className="absolute left-0 top-0 w-[22%] drop-shadow-xl"
+                className="absolute z-10 left-0 top-0 w-[22%] drop-shadow-xl"
               />
               <img
                 src={img.highlightMain}
@@ -509,12 +614,12 @@ export function LandingPage() {
               <img
                 src={img.highlightRight}
                 alt=""
-                className="absolute bottom-[8%] right-0 w-[22%] drop-shadow-xl"
+                className="absolute bottom-[8%] -right-5 w-[22%] drop-shadow-xl"
               />
             </div>
           </div>
         </div>
-        <div className="relative mx-auto mt-12 flex max-w-[1220px] justify-between px-8">
+        <div className="absolute bottom-1/2 min-w-[1600px] left-0 right-0 mx-auto mt-12 flex max-w-[1220px] justify-between px-8">
           <button
             type="button"
             className="flex size-14 items-center justify-center rounded-full shadow-[0_4px_16px_rgba(250,70,9,0.32)] backdrop-blur-sm"
@@ -532,12 +637,180 @@ export function LandingPage() {
         </div>
       </section>
 
-      <section className="w-full bg-[#17191f]">
-        <img src={img.faq} alt="Frequently asked questions" className="block w-full object-cover" />
+      <section className="bg-[#17191f] px-4 py-12 md:px-0 md:py-16">
+        <div className="mx-auto flex w-full max-w-[1920px] justify-center">
+          <div className="flex w-full max-w-[1280px] flex-col items-center gap-12">
+            <h2 className="w-full text-center font-display text-3xl font-bold leading-[45px] text-white md:text-[36px]">
+              Frequently Asked Questions
+            </h2>
+
+            <div className="flex w-full flex-col items-center gap-8">
+              <div className="flex max-w-[1280px] flex-wrap items-start gap-2">
+                {faqCategories.map((c) => (
+                  <button
+                    key={c.label}
+                    type="button"
+                    className={`flex h-[50px] items-center justify-center gap-2 rounded-2xl px-4 ${c.active
+                        ? 'bg-black/20 text-[#ff5c00] shadow-[0_4px_14px_rgba(255,92,0,0.3)] border'
+                        : 'border border-[#383852] bg-black/20 text-white shadow-[0_4px_16px_rgba(0,0,0,0.15)]'
+                      }`}
+                  >
+                    <img
+                      src={c.iconPath}
+                      alt=""
+                      className="h-5 w-5 object-contain"
+                      loading="lazy"
+                    />
+                    <span className="font-body text-base font-medium">{c.label}</span>
+                    <span className={`rounded-md px-1 py-[2px] text-xs font-medium ${c.active ? 'bg-[#ff5c00] text-white' : 'bg-[#383852] text-white'
+                      }`}>
+                      {c.count}
+                    </span>
+                  </button>
+                ))}
+              </div>
+
+              <div className="flex w-full flex-col gap-4">
+                {faqItems.map((item) =>
+                  item.open ? (
+                    <article
+                      key={item.question}
+                      className="rounded-2xl bg-gradient-to-br from-[rgba(56,56,82,0.5)] via-[rgba(43,45,77,0.5)] to-[rgba(13,15,21,0.5)] px-8 py-6"
+                    >
+                      <div className="flex items-center justify-between gap-4">
+                        <h3 className="font-body text-xl font-medium text-white">{item.question}</h3>
+                        <span className="text-white" aria-hidden>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                          >
+                            <path
+                              d="M5 12l5-5 5 5"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                        </span>
+                  
+                      </div>
+                      <p className="mt-4 font-body text-base leading-6 text-white/90">{item.answer}</p>
+                    </article>
+                  ) : (
+                    <button
+                      key={item.question}
+                      type="button"
+                      className="flex min-h-[72px] w-full items-center justify-between gap-4 rounded-2xl bg-gradient-to-br from-[rgba(56,56,82,0.5)] via-[rgba(43,45,77,0.5)] to-[rgba(13,15,21,0.5)] px-8 py-6 text-left"
+                    >
+                      <span className="font-body text-xl font-semibold text-white">{item.question}</span>
+                      <span className="text-white" aria-hidden>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                        >
+                          <path
+                            d="M5 8l5 5 5-5"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </span>
+                
+                    </button>
+                  ),
+                )}
+              </div>
+
+              <button type="button" className="flex items-center gap-2 font-body text-base font-bold uppercase tracking-[0.02em] text-white">
+                show all questions
+                <span aria-hidden>→</span>
+              </button>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <section className="w-full bg-[#17191f]">
-        <img src={img.blog} alt="Blog" className="block w-full object-cover" />
+      <section className="bg-[#17191f] px-4 py-12 md:px-0 md:py-16">
+        <div className="mx-auto flex w-full max-w-[1920px] justify-center">
+          <div className="flex w-full max-w-[1280px] flex-col gap-8">
+            <h2 className="w-full text-center font-display text-3xl font-bold leading-[45px] text-white md:text-[36px]">
+              Blog Posts
+            </h2>
+
+            <div className="flex flex-col gap-8">
+              <article className="flex flex-col gap-8 rounded-3xl p-8 md:h-[364px] md:flex-row">
+                <div className="flex flex-1 flex-col justify-between rounded-2xl bg-gradient-to-br from-[rgba(56,56,82,0.5)] via-[rgba(43,45,77,0.5)] to-[rgba(13,15,21,0.5)] p-6">
+                  <div className="flex flex-col gap-6">
+                    <div className="flex items-center gap-2 font-body text-xs text-white/80">
+                      <span>Call of Duty</span>
+                      <span className="text-[4px]">●</span>
+                      <span>10.03.2026</span>
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <h3 className="font-display text-[30px] font-bold leading-[38px] text-white">Call of Duty Boosting</h3>
+                      <p className="font-body text-sm leading-5 text-white">
+                        Pellentesque posuere ullamcorper nulla sed accumsan. Morbi id justo pharetra, faucibus urna vitae, mollis orci. Aliquam a imperdiet odio. Ut venenatis auctor sem, vel auctor nunc mattis quis.
+                      </p>
+                    </div>
+                  </div>
+                  <button type="button" className="mt-5 inline-flex items-center gap-2 font-body text-base font-bold uppercase tracking-[0.02em] text-white md:mt-0">
+                    read more
+                    <span aria-hidden>→</span>
+                  </button>
+                </div>
+                <img
+                  src="/photo.png"
+                  alt="Highlighted blog post"
+                  className="h-[300px] flex-1 rounded-2xl object-cover"
+                />
+              </article>
+
+              <div className="grid gap-8 md:grid-cols-3">
+                {[
+                  { title: 'Valorant Boosting', image: '/VALORANT-Tournament 1.png' },
+                  { title: 'LoL Ranked Journey', image: '/VALORANT-Tournament 1.png', highlighted: true },
+                  { title: 'EA FC Tips & Meta', image: '/VALORANT-Tournament 1.png' },
+                ].map((post) => (
+                  <article
+                    key={post.title}
+                    className="relative rounded-3xl p-8 "
+                  >
+                    <div className="flex h-full flex-col gap-4">
+                      <div className="relative">
+                        <img src={post.image} alt={post.title} className="h-[240px] w-full rounded-2xl object-cover" />
+                      </div>
+                      <div className="flex flex-col gap-2">
+                        <h3 className="font-body text-lg font-medium leading-7 text-white">{post.title}</h3>
+                        <p className="font-body text-sm leading-5 text-white">
+                          Pellentesque posuere ullamcorper nulla sed accumsan. Morbi id justo pharetra, faucibus urna vitae, mollis orci. Aliquam a imperdiet odio.
+                        </p>
+                      </div>
+                      <div className="mt-auto flex items-center gap-2 font-body text-xs text-white/80">
+                        <span>Valorant</span>
+                        <span className="text-[4px]">●</span>
+                        <span>10.03.2026</span>
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+
+            <button type="button" className="mx-auto inline-flex items-center gap-2 font-body text-base font-bold uppercase tracking-[0.02em] text-white">
+              show all blog posts
+              <span aria-hidden>→</span>
+            </button>
+          </div>
+        </div>
       </section>
 
       <footer className="bg-black px-4 py-12 md:px-16 lg:px-28">
@@ -547,31 +820,39 @@ export function LandingPage() {
             <div className="flex flex-wrap gap-12 lg:gap-16">
               <div>
                 <h3 className="font-body text-base font-bold text-[#fa4609]">Social</h3>
-                <div className="mt-4 flex gap-2">
-                  {['Facebook', 'X', 'TikTok', 'Instagram'].map((network) => (
+                <div className="mt-4 flex gap-1">
+                  {socialIcons.map((fileName) => (
                     <a
-                      key={network}
+                      key={fileName}
                       href="#"
-                      className="flex size-9 items-center justify-center rounded-lg bg-white/10 text-xs hover:bg-white/20"
+                      className="flex size-9 items-center justify-center overflow-hidden rounded-lg"
                     >
-                      {network[0]}
+                      <img
+                        src={`/social/${encodeURIComponent(fileName)}`}
+                        alt=""
+                        className="max-h-full max-w-full object-contain"
+                        loading="lazy"
+                      />
                     </a>
                   ))}
                 </div>
               </div>
               <div>
                 <h3 className="font-body text-base font-bold text-[#fa4609]">Payment Methods</h3>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {['Visa', 'Mastercard', 'PayPal', 'Apple Pay', 'Google Pay', 'Crypto'].map(
-                    (p) => (
-                      <span
-                        key={p}
-                        className="rounded border border-white/10 bg-white/5 px-2 py-1 font-body text-[11px] text-white/90"
-                      >
-                        {p}
-                      </span>
-                    ),
-                  )}
+                <div className="mt-4 flex flex-wrap gap-1">
+                  {paymentCardIcons.map((fileName) => (
+                    <div
+                      key={fileName}
+                      className="flex min-h-[25px] min-w-[40px] items-center justify-center overflow-hidden rounded border border-white/10 bg-white/5"
+                    >
+                      <img
+                        src={`/card/${encodeURIComponent(fileName)}`}
+                        alt=""
+                        className="max-h-full max-w-full object-contain"
+                        loading="lazy"
+                      />
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
