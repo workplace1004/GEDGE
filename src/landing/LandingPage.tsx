@@ -775,7 +775,7 @@ export function LandingPage() {
                 />
               </article>
 
-              <div className="grid gap-8 md:grid-cols-3">
+              <div className="grid gap-8 md:grid-cols-3 min-w-[1280px]">
                 {[
                   { title: 'Valorant Boosting', image: '/blog-post.png' },
                   { title: 'LoL Ranked Journey', image: '/blog-post.png', highlighted: true },
@@ -787,7 +787,7 @@ export function LandingPage() {
                   >
                     <div className="flex h-full flex-col">
                       <div className="relative">
-                        <img src={post.image} alt={post.title} className="h-[470px] min-w-[405.33px] rounded-2xl object-cover" />
+                        <img src={post.image} alt={post.title} className="h-[470px] min-w-[406px] rounded-2xl object-cover" />
                       </div>
                     </div>
                   </article>
