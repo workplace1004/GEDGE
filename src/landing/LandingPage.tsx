@@ -175,6 +175,7 @@ function GameCard({ tile }: { tile: GameTile }) {
         src={tile.backing}
         alt=""
         className="absolute inset-0 size-full object-cover"
+        style={{ transform: `scale(${tile.backingScale ?? 1})` }}
       />
       <div
         className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-[#ff5c00]/45 to-[#a32d05]/50 opacity-0 transition-opacity duration-200 group-hover:opacity-100"
