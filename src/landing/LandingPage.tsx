@@ -504,7 +504,7 @@ export function LandingPage() {
 
             <button
               type="button"
-              className="absolute right-0 top-1/2 z-20 hidden size-16 -translate-y-1/2 items-center justify-center rounded-[56px] border border-[#ffa384] bg-white/10 shadow-[0_4px_16px_rgba(250,70,9,0.32)] backdrop-blur-[3px] md:flex"
+              className="absolute right-0 top-1/2 z-20 hidden size-16 -translate-y-1/2 items-center justify-center rounded-[56px] shadow-[0_4px_16px_rgba(250,70,9,0.32)] backdrop-blur-[3px] md:flex"
               aria-label="Next reviews"
             >
               <span className="text-[42px] leading-none text-[#ff5c00]">›</span>
@@ -630,7 +630,7 @@ export function LandingPage() {
           </button>
           <button
             type="button"
-            className="flex size-14 items-center justify-center rounded-full border border-[#ffa384] bg-white/10 shadow-[0_4px_16px_rgba(250,70,9,0.32)] backdrop-blur-sm"
+            className="flex size-14 items-center justify-center rounded-full shadow-[0_4px_16px_rgba(250,70,9,0.32)] backdrop-blur-sm"
             aria-label="Next slide"
           >
             <span className="text-2xl text-[#ff5c00]">›</span>
