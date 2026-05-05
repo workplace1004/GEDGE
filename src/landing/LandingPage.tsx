@@ -156,18 +156,18 @@ function Header() {
 
 function GameCard({ tile }: { tile: GameTile }) {
   return (
-    <div
-      className={`relative aspect-[302/180] w-full overflow-hidden rounded-3xl ${
-        tile.featured ? 'ring-2 ring-[#ffa182] shadow-[0_4px_16px_rgba(139,43,223,0.32)]' : ''
-      }`}
-    >
+    <div className="group relative aspect-[302/180] w-full cursor-pointer overflow-hidden rounded-3xl ring-2 ring-transparent shadow-none transition-[box-shadow,ring-color] duration-200 hover:shadow-[0_4px_16px_rgba(250,70,9,0.32)] hover:ring-[#ffa182]">
       <img
         src={tile.backing}
         alt=""
         className="absolute inset-0 size-full object-cover"
       />
-      <div className="absolute inset-0 flex items-center justify-center p-4">
-        <img src={tile.logo} alt={tile.alt} className="max-h-[40%] max-w-[70%] object-contain" />
+      <div
+        className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-[#ff5c00]/45 to-[#a32d05]/50 opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+        aria-hidden
+      />
+      <div className="absolute inset-0 z-[2] flex items-center justify-center p-4">
+        <img src={tile.logo} alt={tile.alt} className="max-h-[40%] max-w-[70%] object-contain drop-shadow-sm" />
       </div>
     </div>
   )

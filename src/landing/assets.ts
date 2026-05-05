@@ -28,7 +28,6 @@ export type GameTile = {
   backing: string
   logo: string
   alt: string
-  featured?: boolean
 }
 
 export const gameTiles: GameTile[] = [
@@ -43,7 +42,6 @@ export const gameTiles: GameTile[] = [
       'https://api.builder.io/api/v1/image/assets/TEMP/fc5470371b96959a0b4cb495efa4b836a1d9fb9a?width=604',
     logo: 'https://api.builder.io/api/v1/image/assets/TEMP/f911e1497677ddcf0ca093e8dd7b7225f1af2499?width=346',
     alt: 'Call of Duty: Black Ops Cold War',
-    featured: true,
   },
   {
     backing:
