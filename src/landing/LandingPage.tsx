@@ -777,28 +777,17 @@ export function LandingPage() {
 
               <div className="grid gap-8 md:grid-cols-3">
                 {[
-                  { title: 'Valorant Boosting', image: '/VALORANT-Tournament 1.png' },
-                  { title: 'LoL Ranked Journey', image: '/VALORANT-Tournament 1.png', highlighted: true },
-                  { title: 'EA FC Tips & Meta', image: '/VALORANT-Tournament 1.png' },
+                  { title: 'Valorant Boosting', image: '/blog-post.png' },
+                  { title: 'LoL Ranked Journey', image: '/blog-post.png', highlighted: true },
+                  { title: 'EA FC Tips & Meta', image: '/blog-post.png' },
                 ].map((post) => (
                   <article
                     key={post.title}
                     className="relative rounded-3xl p-8 "
                   >
-                    <div className="flex h-full flex-col gap-4">
+                    <div className="flex h-full flex-col">
                       <div className="relative">
-                        <img src={post.image} alt={post.title} className="h-[240px] w-full rounded-2xl object-cover" />
-                      </div>
-                      <div className="flex flex-col gap-2">
-                        <h3 className="font-body text-lg font-medium leading-7 text-white">{post.title}</h3>
-                        <p className="font-body text-sm leading-5 text-white">
-                          Pellentesque posuere ullamcorper nulla sed accumsan. Morbi id justo pharetra, faucibus urna vitae, mollis orci. Aliquam a imperdiet odio.
-                        </p>
-                      </div>
-                      <div className="mt-auto flex items-center gap-2 font-body text-xs text-white/80">
-                        <span>Valorant</span>
-                        <span className="text-[4px]">●</span>
-                        <span>10.03.2026</span>
+                        <img src={post.image} alt={post.title} className="h-[470px] min-w-[405.33px] rounded-2xl object-cover" />
                       </div>
                     </div>
                   </article>
